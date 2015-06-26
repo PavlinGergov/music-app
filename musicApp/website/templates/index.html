@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Music artists</title>
+	<link rel="stylesheet" type="text/css" href="/static/bower_components/bootstrap/dist/css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="/static/bower_components/bootstrap/dist/css/bootstrap-theme.min.css">
+	<link rel="stylesheet" type="text/css" href="/static/css/main.css">
+</head>
+{% verbatim %}   
+<body ng-app="musicApp" ng-controller="PageController" ng-cloak>
+	<div class="navbar navbar-default">
+	  <div class="container">
+	    <div class="navbar-header">
+	      <a href="http://localhost:8000/" class="navbar-brand">Music Artists</a>
+	    </div>
+	    <div class="navbar-collapse collapse" id="navbar-main">
+	      <ul class="nav navbar-nav">
+	    		<li>
+	    			<a href="#/add-artist/">Add Artist</a>
+	    		</li>
+	    		<li>
+	    			<a href="#/artist-details/">Artist Details</a>
+	    		</li>
+	      </ul>
+	    </div>
+	  </div>
+	</div>
+	The answer to 2 + 4 is {{2 + 4}}
+	<div ng-view>
+		
+	</div>
+
+	<footer class="text-center">
+		<hr />
+		<small>
+			Author: {{author}}
+		</small>
+	</footer>
+
+	<script type="text/javascript" src="/static/bower_components/jquery/dist/jquery.min.js"></script>
+	<script type="text/javascript" src="/static/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="/static/bower_components/angular/angular.js"></script>
+	<script type="text/javascript" src="/static/bower_components/angular-route/angular-route.min.js"></script>
+	<script type="text/javascript" src="/static/js/app.js"></script>
+	<script type="text/javascript" src="/static/js/controllers/PageController.js"></script>
+	<script type="text/javascript" src="/static/js/controllers/ArtistDetailsController.js"></script>
+	<script type="text/javascript" src="/static/js/controllers/AddArtistController.js"></script>
+	<script type="text/javascript" src="/static/js/filters/statusFilter.js"></script>
+	<script type="text/javascript" src="/static/js/services/artistData.js"></script>
+</body>
+{% endverbatim %}
+</html>
