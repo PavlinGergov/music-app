@@ -21,21 +21,7 @@ angular.module('musicApp').factory('artistData', function($http, $q){
 
       return defer.promise;
 
-    }, // TODO: make post request to the server
-    getArtist: function(id) {
-      var defer = $q.defer();
-
-      $http({method: 'GET', url: 'data/artist/' + id + '.json'})
-        .success(function(data){
-          defer.resolve(data);
-        })
-        .error(function(data){
-          defer.reject(data);
-        });
-
-      return defer.promise;
     },
-
     getAllArtists: function(){
       return $http.get('/get-artists/')
         .then(function(response){

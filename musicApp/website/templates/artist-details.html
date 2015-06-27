@@ -8,7 +8,7 @@
 					<strong>Since: </strong> <span class="pull-right">{{artist.created}}</span>
 				</p>
 				<p>
-					<strong>Location: </strong> <span class="pull-right">{{artist.additionalInformation.location}}</span>
+					<strong>Location: </strong> <span class="pull-right">{{artist.location}}</span>
 				</p>
 				<p>
 					<strong>Band members: </strong>
@@ -17,7 +17,7 @@
 						<li class="list-group-item" ng-repeat="member in artist.additionalInformation.bandMembers">{{member}}</li>
 					</ul>
 				</p>
-				<p><strong>Records: </strong> {{artist.additionalInformation.albums}} albums and {{artist.additionalInformation.singles}} singles
+				<p><strong>Records: </strong> {{artist.albums}} albums and {{artist.singles}} singles
 					<button class="btn btn-default btn-sm pull-right" ng-click="showAndHideRecords()">{{bandRecordsShowText}}</button>
 					<div class="container records-container row" ng-show="bandRecordsShown">
 						<div class="search-and-filter row">
