@@ -16,13 +16,14 @@ Including another URLconf
 from django.conf.urls import include, url
 from django.contrib import admin
 
-from website.views import index, get_artist, save_artist, add_artist, artist_details
+from website.views import index, get_all_artists, save_artist, add_artist, artist_details, all_artists
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
     url(r'^$', index, name='index'),
-    url(r'^get-artist/$', get_artist, name='get_artist'),
+    url(r'^get-artists/$', get_all_artists, name='get_all_artists'),
     url(r'^save-artist/$', save_artist, name='save_artist'),
     url(r'^templates/add-artist.html$', add_artist, name='add_artist'),
     url(r'^templates/artist-details$', artist_details, name='artist_details'),
+    url(r'^templates/all-artists$', all_artists, name='all_artist'),
 ]

@@ -1,0 +1,22 @@
+<div class="row">
+	<div class="col-md-12">
+	{% verbatim %}  
+		<div class="row">
+			<div class="form-group col-md-5 col-md-offset-1">
+				Search artist:
+				<input class="form-control" type="text" ng-model="search"/>
+			</div>			
+		</div>	
+		<div class="row">
+			<div ng-repeat="artist in artists | filter: search">
+				<div class="col-md-4" style="text-align: center">
+					<h2><a href="#/artist-details/{{ artist.name }}">{{artist.name}}</a></h2>
+				    <div class="image-container col-md-8 col-md-offset-2 thumbnail">
+				      <img src="" ng-src="{{artist.image}}"/>
+				    </div>
+				</div>
+			</div>
+		</div>
+	{% endverbatim %}
+	</div>
+</div>

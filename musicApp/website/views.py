@@ -8,7 +8,7 @@ import codecs
 def index(request):
     return render(request, "index.html")
 
-def get_artist(request):
+def get_all_artists(request):
     artist = Artist.objects.all()
     data = []
     artist = [a.__dict__ for a in artist]
@@ -29,3 +29,6 @@ def add_artist(request):
 
 def artist_details(request):
     return render(request, "artist-details.html")
+
+def all_artists(request):
+    return render(request, "all-artists.html")

@@ -11,21 +11,17 @@
 	<div class="navbar navbar-default">
 	  <div class="container">
 	    <div class="navbar-header">
-	      <a href="http://localhost:8000/" class="navbar-brand">Music Artists</a>
+	      <a href="#/all-artists" class="navbar-brand">Music Artists</a>
 	    </div>
 	    <div class="navbar-collapse collapse" id="navbar-main">
 	      <ul class="nav navbar-nav">
 	    		<li>
 	    			<a href="#/add-artist/">Add Artist</a>
 	    		</li>
-	    		<li>
-	    			<a href="#/artist-details/">Artist Details</a>
-	    		</li>
 	      </ul>
 	    </div>
 	  </div>
 	</div>
-	The answer to 2 + 4 is {{2 + 4}}
 	<div ng-view>
 		
 	</div>
@@ -45,6 +41,7 @@
 	<script type="text/javascript" src="/static/js/controllers/PageController.js"></script>
 	<script type="text/javascript" src="/static/js/controllers/ArtistDetailsController.js"></script>
 	<script type="text/javascript" src="/static/js/controllers/AddArtistController.js"></script>
+	<script type="text/javascript" src="/static/js/controllers/ListArtistsController.js"></script>
 	<script type="text/javascript" src="/static/js/filters/statusFilter.js"></script>
 	<script type="text/javascript" src="/static/js/services/artistData.js"></script>
 </body>

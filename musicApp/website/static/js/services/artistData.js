@@ -34,6 +34,14 @@ angular.module('musicApp').factory('artistData', function($http, $q){
         });
 
       return defer.promise;
+    },
+
+    getAllArtists: function(){
+      return $http.get('/get-artists/')
+        .then(function(response){
+          return response;
+        });
     }
+
   };
 });

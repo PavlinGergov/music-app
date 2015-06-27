@@ -1,64 +1,67 @@
-<div class="jumbotron">
-  {% verbatim %} 
-  <div class="row">
-    <div class="col-md-6">
-      <form class="form-horizontal" name="newArtistForm">
-        <h1>Artist</h1>
-        <fieldset>
-          <legend>Main Information</legend>
+<div class="container">
+  <div class="jumbotron">
+    {% verbatim %} 
+    <div class="row">
+      <div class="col-md-6">
+        <form class="form-horizontal" name="newArtistForm">
+          <h1>Artist</h1>
+          <fieldset>
+            <legend>Main Information</legend>
+            <div class="form-group">
+              <label for="name" class="col-lg-2 control-label">Name</label>
+              <div class="col-lg-10">
+                <input type="text" required="required" ng-pristine class="form-validation form-control" id="name" placeholder="Name" ng-model="artist.name"/>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="image" class="col-lg-2 control-label">Image</label>
+              <div class="col-lg-10">
+                <input type="text" required="required" ng-pattern="/\.(gif|jpg|jpeg|tiff|png)$/i" class="form-validation form-control" id="image" placeholder="Image URL" ng-model="artist.image"/>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="date"  class="col-lg-2 control-label">Created</label>
+              <div class="col-lg-10">
+                <input type="text" required="required" ng-pattern="/\d\d\d\d/\d\d/\d\d/" class="form-validation form-control" id="date" placeholder="Date Created (yyyy-mm-dd)" ng-model="artist.created"/>
+              </div>
+            </div>
+          </fieldset>
+          <fieldset>
+            <legend>
+              Additional Information
+            </legend>
+            <div class="form-group">
+              <label for="location" class="col-lg-2 control-label">Location</label>
+              <div class="col-lg-10">
+                <input type="text" class="form-control form-validation" required="required" id="location" placeholder="Location" ng-model="artist.additionalInformation.location"/>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="albums" class="col-lg-2 control-label">Albums</label>
+              <div class="col-lg-10">
+                <input type="text" class="form-control form-validation" id="albums" ng-pattern="/\d/" required="required" placeholder="Albums <number>" ng-model="artist.additionalInformation.albums"/>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="singles" class="col-lg-2 control-label">Singles</label>
+              <div class="col-lg-10">
+                <input type="text" class="form-validation form-control" id="singles" ng-pattern="/\d/" required="required" placeholder="Singles <number>" ng-model="artist.additionalInformation.singles"/>
+              </div>
+            </div>
+          </fieldset>
           <div class="form-group">
-            <label for="name" class="col-lg-2 control-label">Name</label>
-            <div class="col-lg-10">
-              <input type="text" required="required" class="form-validation form-control" id="name" placeholder="Name" ng-model="artist.name"/>
+            <div class="pull-right">
+              <button class="btn btn-default" ng-click="reset()">Reset</button>
+              <button type="submit" class="btn btn-default" ng-disabled="newArtistForm.$invalid"ng-click="saveArtist(artist, newArtistForm)">Save</button>
             </div>
           </div>
-          <div class="form-group">
-            <label for="image" class="col-lg-2 control-label">Image</label>
-            <div class="col-lg-10">
-              <input type="text" required="required" ng-pattern="/\.(gif|jpg|jpeg|tiff|png)$/i" class="form-validation form-control" id="image" placeholder="Image URL" ng-model="artist.image"/>
-            </div>
-          </div>
-          <div class="form-group">
-            <label for="date"  class="col-lg-2 control-label">Created</label>
-            <div class="col-lg-10">
-              <input type="text" required="required" ng-pattern="/\d\d\d\d/\d\d/\d\d/" class="form-validation form-control" id="date" placeholder="Date Created (yyyy-mm-dd)" ng-model="artist.created"/>
-            </div>
-          </div>
-        </fieldset>
-        <fieldset>
-          <legend>
-            Additional Information
-          </legend>
-          <div class="form-group">
-            <label for="location" class="col-lg-2 control-label">Location</label>
-            <div class="col-lg-10">
-              <input type="text" class="form-control form-validation" required="required" id="location" placeholder="Location" ng-model="artist.additionalInformation.location"/>
-            </div>
-          </div>
-          <div class="form-group">
-            <label for="albums" class="col-lg-2 control-label">Albums</label>
-            <div class="col-lg-10">
-              <input type="text" class="form-control form-validation" id="albums" ng-pattern="/\d/" required="required" placeholder="Albums <number>" ng-model="artist.additionalInformation.albums"/>
-            </div>
-          </div>
-          <div class="form-group">
-            <label for="singles" class="col-lg-2 control-label">Singles</label>
-            <div class="col-lg-10">
-              <input type="text" class="form-validation form-control" id="singles" ng-pattern="/\d/" required="required" placeholder="Singles <number>" ng-model="artist.additionalInformation.singles"/>
-            </div>
-          </div>
-        </fieldset>
-        <div class="form-group">
-          <div class="pull-right">
-            <button class="btn btn-default" ng-click="cancel()">Cancel</button>
-            <button type="submit" class="btn btn-default" ng-disabled="newArtistForm.$invalid"ng-click="saveArtist(artist, newArtistForm)">Save</button>
-          </div>
-        </div>
-      </form>
+        </form>
+      </div>
+      <div class="image-container col-md-6">
+        <img src="" ng-src="{{artist.image}}"/>
+      </div>
     </div>
-    <div class="image-container col-md-6">
-      <img src="" ng-src="{{artist.image}}"/>
-    </div>
+    {% endverbatim %}
   </div>
-  {% endverbatim %}
+  
 </div>
